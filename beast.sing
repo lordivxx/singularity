@@ -1,0 +1,12 @@
+BootStrap: docker
+From: centos:7
+
+%post
+    git clone https://github.com/lordivxx/beast.git 
+
+%environment
+    export LC_ALL=C
+
+
+%runscript
+    ./beast.py
