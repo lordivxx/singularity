@@ -1,12 +1,20 @@
 BootStrap: docker
-From: centos:7
+From: python:3.6-alpine
+
 
 %post
-    git clone https://github.com/lordivxx/beast.git 
+    apk add git
+    apk add python
+    apk add bash
+    cd /
+    git clone https://github.com/lordivxx/beast.git
+    chmod 777 -R /beast 
 
 %environment
     export LC_ALL=C
+    export PATH=/beast:$PATH
 
 
 %runscript
-    ./beast.py
+    cd /beast
+    beast.py
