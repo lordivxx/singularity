@@ -5,7 +5,7 @@ From: python:3.6-alpine
 %post
     apk add git
     apk add python
-    apk add bash
+#    apk add bash
     cd /
     git clone https://github.com/lordivxx/beast.git
     chmod 777 -R /beast 
